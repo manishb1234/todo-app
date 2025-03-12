@@ -10,7 +10,8 @@ import time
 now = time.strftime("%Y-%m-%d (%b) %H:%M:%S")
 print(now)
 
-from modules import functions
+import functions
+
 while True:
     user_prompt = input("Enter an option: add, show, edit,complete or exit: ")
     user_prompt = user_prompt.strip()

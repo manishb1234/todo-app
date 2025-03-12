@@ -22,13 +22,13 @@ while True:
             print(todos)
             file.close()"""
 
-            with open('todos.txt', 'r') as file:
+            with open('main/todos.txt', 'r') as file:
                   todos = file.readlines()
 
             todos.append(todo)
             print(todos)
 
-            with open('todos.txt', 'w') as file:
+            with open('main/todos.txt', 'w') as file:
                 file.writelines(todos)
 
         case 'show':
@@ -43,7 +43,7 @@ while True:
             new_todos = [item.strip('\n') for item in todos]
             """#for loop in 1 line
 
-            with open("todos.txt", 'r') as file:
+            with open("main/todos.txt", 'r') as file:
                 todos = file.readlines()
 
             for index, item in enumerate(todos):
@@ -58,25 +58,25 @@ while True:
             index = index-1
             newItem = input("Enter the new edited item: ")
 
-            with open("todos.txt", 'r') as file:
+            with open("main/todos.txt", 'r') as file:
                 todos = file.readlines() #thats why file.readlines() is stored as a list, so it can be edited
 
                 todos[index] = newItem + '\n'
                 print(todos)
 
-            with open("todos.txt", 'w') as file:
+            with open("main/todos.txt", 'w') as file:
                 file.writelines(todos)
 
         case 'complete':
             number = int(input("Enter the number of item to be removed: "))
             number = number - 1 #offsetting index by 1 for user
 
-            with open("todos.txt", 'r') as file:
+            with open("main/todos.txt", 'r') as file:
                 todos = file.readlines()
                 todos.pop(number)
                 print(todos)
 
-            with open("todos.txt", 'w') as  file:
+            with open("main/todos.txt", 'w') as  file:
                 file.writelines(todos)
 
         case 'exit':
