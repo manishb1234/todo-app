@@ -1,13 +1,22 @@
-
+# see how to create .exe, giving error section 18, video 177, giving error while running pyinstaller in venv
 import functions
 import FreeSimpleGUI as sg
 import time
+import os
 
-sg.theme("DarkBlue15")
+if  not os.path.exists("todos.txt"):
+    with open("todos.txt", 'w') as file:
+        pass
+
+
+sg.theme("Black")
 
 clock = sg.Text("", key='clock')
 label = sg.Text("Enter a todo")
 inputBox = sg.InputText(tooltip="Enter todo", key="todo")
+#add_button = sg.Button(size=2, image_source="add.png", mouseover_colors="LightBlue2",
+#                       tooltip="Add Todo", key="Add")
+#event takes either the label 'add or  the key 'Add'
 add_button = sg.Button("Add")
 listbox = sg.Listbox(values=functions.get_todos(), key="todos",
                      enable_events = True, size=[45 ,10])
